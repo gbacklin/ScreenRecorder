@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17140" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17115"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ScreenRecorder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VWb-ng-hyF">
+                                <rect key="frame" x="20" y="125" width="374" height="32"/>
+                                <segments>
+                                    <segment title="Red"/>
+                                    <segment title="Blue"/>
+                                    <segment title="Orange"/>
+                                    <segment title="Green"/>
+                                </segments>
+                                <connections>
+                                    <action selector="colorsWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="axu-fy-Unb"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upp-lK-cb4">
+                                <rect key="frame" x="20" y="64" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kur-AB-HpB">
+                                <rect key="frame" x="132" y="373" width="150" height="150"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="XIY-Qa-TOU"/>
+                                    <constraint firstAttribute="height" constant="150" id="d5o-3v-Da9"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Microphone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7B-Vu-Vhy">
+                                <rect key="frame" x="20" y="552" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5jZ-28-I3T">
+                                <rect key="frame" x="182.5" y="581" width="51" height="31"/>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7k-MX-Htl">
+                                <rect key="frame" x="174.5" y="797" width="65" height="65"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="Qon-9q-dHJ"/>
+                                    <constraint firstAttribute="height" constant="65" id="lUT-e7-4RX"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="recordButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="6AN-iM-r6O"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5jZ-28-I3T" firstAttribute="top" secondItem="D7B-Vu-Vhy" secondAttribute="bottom" constant="8" id="0rg-mY-eOn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="upp-lK-cb4" secondAttribute="trailing" constant="20" id="5Wc-71-p8q"/>
+                            <constraint firstItem="D7B-Vu-Vhy" firstAttribute="top" secondItem="kur-AB-HpB" secondAttribute="bottom" constant="29" id="7lg-E1-zZh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VWb-ng-hyF" secondAttribute="trailing" constant="20" id="CdP-o2-exk"/>
+                            <constraint firstItem="b7k-MX-Htl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HPQ-Z1-0gy"/>
+                            <constraint firstItem="5jZ-28-I3T" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JrW-G7-eWv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="D7B-Vu-Vhy" secondAttribute="trailing" constant="20" id="LIp-7u-iYx"/>
+                            <constraint firstItem="upp-lK-cb4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Mf9-qS-hYm"/>
+                            <constraint firstItem="VWb-ng-hyF" firstAttribute="top" secondItem="upp-lK-cb4" secondAttribute="bottom" constant="40" id="aO2-4L-Mgc"/>
+                            <constraint firstItem="kur-AB-HpB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="apx-TP-Dwr"/>
+                            <constraint firstItem="VWb-ng-hyF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="bjd-q6-j4c"/>
+                            <constraint firstItem="upp-lK-cb4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="fPR-kS-5gH"/>
+                            <constraint firstItem="b7k-MX-Htl" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="gw0-rh-aCw"/>
+                            <constraint firstItem="kur-AB-HpB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="sIB-Ja-Zgx"/>
+                            <constraint firstItem="D7B-Vu-Vhy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="x6m-az-t7Y"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="colorDisplay" destination="kur-AB-HpB" id="ec1-Ib-cyK"/>
+                        <outlet property="colorPicker" destination="VWb-ng-hyF" id="NI3-xd-NcT"/>
+                        <outlet property="micToggle" destination="5jZ-28-I3T" id="Xti-Qs-rLD"/>
+                        <outlet property="recordButton" destination="b7k-MX-Htl" id="KL2-2H-qxc"/>
+                        <outlet property="statusLabel" destination="upp-lK-cb4" id="KIc-9B-Pom"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="81.696428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
