@@ -122,7 +122,7 @@ class ViewController: UIViewController, RPPreviewViewControllerDelegate {
         
         self.isRecording = true
         
-        recorder.startCapture {[weak self] (buffer, type, error) in
+        recorder.startCapture(handler: {[weak self] (buffer, type, error) in
             guard error == nil else {
                 //Handle error
                 debugPrint("Error starting capture");
@@ -163,28 +163,12 @@ class ViewController: UIViewController, RPPreviewViewControllerDelegate {
                     }
                 }
             }
-        } completionHandler: { (error) in
+        }) { (error) in
             if error != nil {
                 debugPrint(error!.localizedDescription)
             }
         }
         
-        /*
-         recorder.startRecording{ [unowned self] (error) in
-         guard error == nil else {
-         print("There was an error starting the recording.")
-         return
-         }
-         
-         print("Started Recording Successfully")
-         self.micToggle.isEnabled = false
-         self.recordButton.backgroundColor = UIColor.red
-         self.statusLabel.text = "Recording..."
-         self.statusLabel.textColor = UIColor.red
-         
-         self.isRecording = true
-         }
-         */
     }
     
     func stopRecording() {
@@ -195,7 +179,6 @@ class ViewController: UIViewController, RPPreviewViewControllerDelegate {
                     DispatchQueue.main.async {
                         if self!.videoWriter!.status == AVAssetWriter.Status.writing {
                             if self!.videoWriterInput!.isReadyForMoreMediaData {
-                                //self!.statusLabel.text = "Finished writing video"
                                 if self!.videoWriterInput!.append(self!.sampleBuffer!) == false {
                                     self!.statusLabel.text = "problem writing video"
                                 }

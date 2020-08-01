@@ -3,11 +3,12 @@
 //  ScreenRecorder
 //
 //  Created by Gene Backlin on 7/31/20.
+//  Copyright © 2020 Gene Backlin. All rights reserved.
 //
 
 import UIKit
 
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
